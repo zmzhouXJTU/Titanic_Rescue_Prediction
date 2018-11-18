@@ -492,15 +492,11 @@ Age_band|Sum|
 * **Bagging** 类似随机森林类型的，**并行的集成**
 * **Boosting** 提升类型
 * **Stacking** 堆叠类型
-
-#### 投票分类器
-
-这是将许多不同的简单机器学习模型的预测结合起来的最简单方法。它**给出了一个平均预测结果基于各子模型的预测**
-
-* The accuracy for ensembled model is: 0.8246268656716418
-* The cross validated score is 0.8237660310974917
+* **Blending**
 
 #### Bagging
+
+`Bagging`将多个模型，也就是多个基学习器的预测结果进行简单的加权平均或者投票。它的好处是可以并行地训练基学习器。`Random Forest`就用到了**Bagging**的思想。
 
 * Bagging KNN
     * The accuracy for bagged KNN is: 0.835820895522
@@ -512,7 +508,9 @@ Age_band|Sum|
 
 ### Boosting
 
-**提升是一个逐步增强的弱模型**，首先对完整的数据集进行训练。现在模型会得到一些实例，而有些错误。现在，在下一次迭代中，学习者将更多地关注错误预测的实例或赋予它更多的权重
+`Boosting`的思想有点像知错能改，每个基学习器是在上一个基学习器学习的基础上，对上一个基学习器的错误进行弥补。我们将会用到的`AdaBoost`，`Gradient Boost`就用到了这种思想
+
+**提升是一个逐步增强的弱模型**，首先对完整的数据集进行训练。现在模型会得到一些实例，而有些错误。现在，在下一次迭代中，学习者将更多地关注错误预测的实例或赋予它更多的权重.
 
 `AdaBoost`(自适应增强)---在这种情况下，弱学习或估计是一个决策树。但我们可以改变缺省`base_estimator`任何算法的选择
 
@@ -521,6 +519,14 @@ Age_band|Sum|
     * The cross validated score for Gradient Boosting is: 0.818286233118
 
 ### Stacking
+
+`Stacking`是用新的次学习器去学习如何组合上一层的基学习器。如果把`Bagging`看作是多个基分类器的**线性组合**，那么`Stacking`就是多个基分类器的**非线性组合**。`Stacking`可以将学习器一层一层地堆砌起来，形成一个**网状的结构**
+
+相比来说`Stacking`的融合框架相对前面的二者来说在精度上确实有一定的提升。
+
+### Blending
+
+`Blending`和`Stacking`很相似，但同时它可以**防止信息泄露的问题。**
 
 我们得到了最高的精度为`AdaBoost`。我们将尝试用**超参数调整**来增加它
 
