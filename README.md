@@ -385,7 +385,7 @@ Age_band|Sum|
     * **船票编号** ---> 这是任意的字符串，不能被归类
     * **船票价格** ---> 我们有`fare_cat`特征，所以不需要船票价格特征
     * **客仓号** ---> 这个也不需要，因为没啥含义
-    * **乘客编号** --> 不能被归类
+    * **乘客编号** ---> 不能被归类
 
 * 我们再来看看去掉部分无用特征后的特征之间的关系图：
 
@@ -413,22 +413,22 @@ Age_band|Sum|
 
 * **Radial Support Vector Machines(rbf-SVM)**
     * **Accuracy for rbf SVM is  0.835820895522388**
-<br>
+
 * **Linear Support Vector Machine(linear-SVM)**
     * **Accuracy for linear SVM is 0.8171641791044776**
-<br>
+
 * **Logistic Regression**
     * **The accuracy of the Logistic Regression is 0.8171641791044776**
-<br>
+
 * **Decision Tree**
     * **The accuracy of the Decision Tree is 0.7985074626865671**
-<br>
+
 * **K-Nearest Neighbours(KNN)**
     * **The accuracy of the KNN is 0.832089552238806**
-<br>
+
 * **Naive Bayes**
     * **The accuracy of the NaiveBayes is 0.8134328358208955**
-<br>
+
 * **Random Forest**
     * **The accuracy of the Random Forests is 0.8097014925373134**
 
